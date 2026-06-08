@@ -1,0 +1,24 @@
+baseURL = 'https://zy031806.github.io/'
+locale = 'zh'
+title = 'zy031806的博客'
+theme = 'papermod'
+
+[output]
+    home = ["HTML", "RSS", "JSON"]
+
+[params]
+    ShowCodeCopyButtons = true
+    showtoc = true
+    tocopen = true
+
+[menu]
+    [[menu.main]]
+        identifier = "k8s"
+        name = "k8s"
+        url = "/k8s/"
+        weight = 20
+    [[menu.main]]
+        identifier = "search"
+        name = "搜索"
+        url = "/search/"
+        weight = 10
