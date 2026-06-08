@@ -11,6 +11,11 @@ theme = 'papermod'
     showtoc = true
     tocopen = true
 
+[params.analytics.umami]
+    enable = true
+    website_id = "05e6182d-ca3e-4985-a675-84987f8c977d"
+    url = "https://cloud.umami.is/script.js"
+
 [menu]
     [[menu.main]]
         identifier = "k8s"
