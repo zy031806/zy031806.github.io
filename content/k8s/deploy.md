@@ -2,7 +2,9 @@
 date = '2026-06-08T09:27:45+08:00'
 draft = false
 title = 'Deploy'
-
+description = '在 CentOS/Debian 上使用 CRI-O + kubeadm 搭建 Kubernetes 集群，并部署 Nginx、Headlamp 仪表板与本地存储类的完整步骤。'
+summary = '从零搭建一套可用的 Kubernetes 集群：CRI-O 运行时、kubeadm 初始化 master、Calico 网络插件、node 节点加入，以及 Nginx、Headlamp 仪表板和 local-path 存储类的部署与重启验证。'
+tags = ['k8s', 'kubernetes', 'kubeadm', 'CRI-O']
 +++
 
 # 搭建`k8s`集群
@@ -41,7 +43,7 @@ vim /etc/hosts
 ~~~txt
 192.168.111.129 k8s-master
 192.168.111.131 k8s-node1
-192.168.111.132 k8s-mode2
+192.168.111.132 k8s-node2
 ~~~
 
 ### 安装容器进行时
@@ -280,44 +282,3 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 ~~~bash
 kubectl get storageclass
 ~~~
-
-## 多服务部署
-
-### 配置文件
-
-编写每个服务的配置文件
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

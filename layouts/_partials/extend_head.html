@@ -3,4 +3,9 @@
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
 {{- /* Head custom content area end */ -}}
 
-<script defer src="https://cloud.umami.is/script.js" data-website-id="05e6182d-ca3e-4985-a675-84987f8c977d"></script>
+{{- /* Umami 统计：脚本地址与站点 ID 均取自 hugo.toml 的 [params.analytics.umami] */ -}}
+{{- with site.Params.analytics.umami }}
+{{- if and .enable .website_id }}
+<script defer src="{{ .url | default "https://cloud.umami.is/script.js" }}" data-website-id="{{ .website_id }}"></script>
+{{- end }}
+{{- end }}

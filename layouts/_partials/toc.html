@@ -104,7 +104,10 @@
             // Make the first header active
             activeElement = elements[0];
             const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
-            document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            const firstLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+            if (firstLink) {
+                firstLink.classList.add('active');
+            }
         }
     
         // Add event listener for the "back to top" link
@@ -146,6 +149,9 @@
             elements.forEach(element => {
                 const id = encodeURI(element.getAttribute('id')).toLowerCase();
                 const tocLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+                if (!tocLink) {
+                    return;
+                }
                 if (element === activeElement){
                     tocLink.classList.add('active');
     

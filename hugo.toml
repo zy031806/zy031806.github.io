@@ -1,20 +1,35 @@
 baseURL = 'https://zy031806.github.io/'
-locale = 'zh'
 title = 'zy031806的博客'
 theme = 'papermod'
 
-[output]
+# 站点默认语言为中文，同时决定 <html lang> 与界面文案（i18n）的语言
+defaultContentLanguage = 'zh'
+
+[languages]
+    [languages.zh]
+        locale = 'zh-CN'
+        label = '简体中文'
+        weight = 1
+        hasCJKLanguage = true
+
+# 首页除了 HTML、RSS，还需要 JSON：PaperMod 的搜索页依赖 /index.json
+[outputs]
     home = ["HTML", "RSS", "JSON"]
 
 [params]
+    description = 'zy031806 的个人博客，记录 Kubernetes、后端与运维实践。'
     ShowCodeCopyButtons = true
     showtoc = true
     tocopen = true
+    DateFormat = '2006-01-02'
+    ShowReadingTime = true
+    ShowWordCount = true
 
+# PaperMod 本身不内置 Umami 支持，这段配置由 layouts/_partials/extend_head.html 读取
 [params.analytics.umami]
     enable = true
-    website_id = "05e6182d-ca3e-4985-a675-84987f8c977d"
-    url = "https://cloud.umami.is/script.js"
+    website_id = '05e6182d-ca3e-4985-a675-84987f8c977d'
+    url = 'https://cloud.umami.is/script.js'
 
 [menu]
     [[menu.main]]
